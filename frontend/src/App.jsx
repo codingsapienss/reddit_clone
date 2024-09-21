@@ -1,50 +1,86 @@
-import { CiSearch } from "react-icons/ci";
-import { GoBell } from "react-icons/go";
-import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import { FaPlus } from "react-icons/fa6";
-import { RiRedditLine } from "react-icons/ri";
+import BoardHeader from "./Components/BoardHeader";
+import Header from "./Components/Header";
+import PostForm from "./Components/PostForm";
 
 const App = () => {
   return (
     <div className="box-border">
-      <header className="flex items-center w-full bg-reddit_dark p-2">
-        <div className="mx-4">
-          <img
-            className="w-8 h-8 object-contain mr-4 "
-            src="./assets/images/reddit-logo.png"
-            alt="Reddit Logo"
-          />
+      <Header />
+      <BoardHeader />
+      <PostForm />
+
+      <div className="px-6 bg-reddit_dark text-reddit_text">
+        <div className="border border-reddit_border bg-reddit_dark-brighter p-2 rounded-md">
+          <h5 className="text-reddit_text-darker text-sm mb-1">
+            {" "}
+            Posted by u/test323 5 hours ago
+          </h5>
+
+          <h2 className="text-xl mb-3">
+            Left my New Job in 5 days because i was feeling guilty of not
+            finding any candidates
+          </h2>
+
+          <div className="text-sm leading-6">
+            Iam the dumbest guy in this world i left my new day-shift job which
+            oay good and team members also good cus i was feeling guilty. I dont
+            have any other offers rip. So i was previously in different US
+            recruitment firm working in night shift and now i switched indian
+            recruitment day shift i know it will be different and it will take
+            some time for me to get started working and achieving targets and i
+            felt really guilty because i couldn't find any candidates for past 4
+            days. So ashamed of myself i left a text saying i will be resigning
+            since this role is not fit for me. Now iam really regreting the
+            decision 😭😭😭 Also next morning i called my teamlead and manager
+            told them y i left and iam ok to join if its possible for them to
+            give me time to learn everything and they said we could've discussed
+            this but now u left suddenly we had to tell Management now situation
+            is big we can't decide anything ourselves and we need to ask
+            Management and decide 😭😭😭 I talked a lot with them they were
+            really good people i feel ashamed of myself Also i left all my
+            asserts in my desk laptop locker key bag headphones. I can't sleep i
+            dont know what I will do i just want to go somewhere i hate myself i
+            cant stop thinking Iam the dumbest guy in this world i left my new
+            day-shift job which oay good and team members also good cus i was
+            feeling guilty. I dont have any other offers rip. So i was
+            previously in different US recruitment firm working in night shift
+            and now i switched indian recruitment day shift i know it will be
+            different and it will take some time for me to get started working
+            and achieving targets and i felt really guilty because i couldn't
+            find any candidates for past 4 days. So ashamed of myself i left a
+            text saying i will be resigning since this role is not fit for me.
+            Now iam really regreting the decision 😭😭😭 Also next morning i
+            called my teamlead and manager told them y i left and iam ok to join
+            if its possible for them to give me time to learn everything and
+            they said we could've discussed this but now u left suddenly we had
+            to tell Management now situation is big we can't decide anything
+            ourselves and we need to ask Management and decide 😭😭😭 I talked a
+            lot with them they were really good people i feel ashamed of myself
+            Also i left all my asserts in my desk laptop locker key bag
+            headphones. I can't sleep i dont know what I will do i just want to
+            go somewhere i hate myself i cant stop thinking Iam the dumbest guy
+            in this world i left my new day-shift job which oay good and team
+            members also good cus i was feeling guilty. I dont have any other
+            offers rip. So i was previously in different US recruitment firm
+            working in night shift and now i switched indian recruitment day
+            shift i know it will be different and it will take some time for me
+            to get started working and achieving targets and i felt really
+            guilty because i couldn't find any candidates for past 4 days. So
+            ashamed of myself i left a text saying i will be resigning since
+            this role is not fit for me. Now iam really regreting the decision
+            😭😭😭 Also next morning i called my teamlead and manager told them
+            y i left and iam ok to join if its possible for them to give me time
+            to learn everything and they said we could've discussed this but now
+            u left suddenly we had to tell Management now situation is big we
+            can't decide anything ourselves and we need to ask Management and
+            decide 😭😭😭 I talked a lot with them they were really good people
+            i feel ashamed of myself Also i left all my asserts in my desk
+            laptop locker key bag headphones. I can't sleep i dont know what I
+            will do i just want to go somewhere i hate myself i cant stop
+            thinking
+          </div>
         </div>
-
-        <form
-          action=""
-          className="bg-reddit_dark-brighter p-1  flex items-center rounded-2xl p-1 mx-4 flex-grow"
-        >
-          {<CiSearch className="text-white h-7 w-7 p-1" />}
-
-          <input
-            type="text"
-            placeholder="Search Reddit"
-            className="bg-reddit_dark-brighter w-full text-gray-300 h-6 outline-none border-none p-2 text-sm p-1 block"
-          />
-        </form>
-
-        <button className="px-3 py-1">
-          {" "}
-          <GoBell className="text-white w-5 h-5  mx-2 " />{" "}
-        </button>
-        <button className="px-3 py-1">
-          <IoChatbubbleEllipsesOutline className="text-white w-5 h-5  mx-2 " />{" "}
-        </button>
-        <button className="px-3 py-1">
-          {" "}
-          <FaPlus className="text-white w-5 h-5  mx-2 " />{" "}
-        </button>
-
-        <button className="bg-gray-600 rounded-md w-8 h-8 flex items-center">
-          <RiRedditLine className="text-white w-5 h-5  mx-2 " />
-        </button>
-      </header>
+      </div>
     </div>
   );
 };

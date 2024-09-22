@@ -6,11 +6,31 @@ import { RiRedditLine } from "react-icons/ri";
 import { CiUser } from "react-icons/ci";
 import { FiLogIn } from "react-icons/fi";
 import Button from "./Button";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Header = () => {
   const [userDropDownVisibilityClass, setUserDropDownVisibilityClass] =
     useState("hidden");
+
+  function useUserDropDown(ref) {
+    useEffect(() => {
+      function handleClickOutside(e) {
+        if (ref.current && !ref.current.contains(e.target)) {
+          setUserDropDownVisibilityClass("hidden");
+        }
+      }
+
+      document.addEventListener("mousedown", handleClickOutside);
+
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  const userDropDownRef = useRef(null);
+
+  useUserDropDown(userDropDownRef);
 
   function toggleUserDropDown() {
     if (userDropDownVisibilityClass === "hidden") {
@@ -66,6 +86,7 @@ const Header = () => {
         onClick={() => {
           toggleUserDropDown();
         }}
+        ref={userDropDownRef}
         className="bg-gray-600 rounded-md w-8 h-8 flex items-center"
       >
         <CiUser className="text-gray-400 w-5 h-5  mx-2 " />

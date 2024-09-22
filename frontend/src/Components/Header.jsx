@@ -3,8 +3,23 @@ import { GoBell } from "react-icons/go";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import { RiRedditLine } from "react-icons/ri";
+import { CiUser } from "react-icons/ci";
+import { FiLogIn } from "react-icons/fi";
+import Button from "./Button";
+import { useState } from "react";
 
 const Header = () => {
+  const [userDropDownVisibilityClass, setUserDropDownVisibilityClass] =
+    useState("hidden");
+
+  function toggleUserDropDown() {
+    if (userDropDownVisibilityClass === "hidden") {
+      setUserDropDownVisibilityClass("block");
+    } else {
+      setUserDropDownVisibilityClass("hidden");
+    }
+  }
+
   return (
     <header className="flex items-center w-full bg-reddit_dark p-2">
       <div className="mx-4">
@@ -28,7 +43,7 @@ const Header = () => {
         />
       </form>
 
-      <button className="px-3 py-1">
+      {/* <button className="px-3 py-1">
         {" "}
         <GoBell className="text-white w-5 h-5  mx-2 " />{" "}
       </button>
@@ -38,11 +53,36 @@ const Header = () => {
       <button className="px-3 py-1">
         {" "}
         <FaPlus className="text-white w-5 h-5  mx-2 " />{" "}
+      </button> */}
+
+      <div className="mx-2">
+        <Button outline className="mr-1 ">
+          Log In
+        </Button>
+        <Button className="">Sign Up</Button>
+      </div>
+
+      <button
+        onClick={() => {
+          toggleUserDropDown();
+        }}
+        className="bg-gray-600 rounded-md w-8 h-8 flex items-center"
+      >
+        <CiUser className="text-gray-400 w-5 h-5  mx-2 " />
+        {/* <RiRedditLine className="text-white w-5 h-5  mx-2 " /> */}
       </button>
 
-      <button className="bg-gray-600 rounded-md w-8 h-8 flex items-center">
-        <RiRedditLine className="text-white w-5 h-5  mx-2 " />
-      </button>
+      <div
+        className={
+          "absolute  right-0 top-8 bg-reddit_dark border border-gray-700 z-10 rounded rounded-md text-reddit_text overflow-hidden " +
+          userDropDownVisibilityClass
+        }
+      >
+        <button className="block flex w-50 py-2 px-3 hover:bg-gray-300 hover:text-black text-sm">
+          {" "}
+          <FiLogIn className="w-5 h-5 mr-2" /> Log In / Sign Up{" "}
+        </button>
+      </div>
     </header>
   );
 };

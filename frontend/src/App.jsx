@@ -1,3 +1,4 @@
+import AuthModal from "./Components/AuthModal";
 import BoardHeader from "./Components/BoardHeader";
 import Header from "./Components/Header";
 import PostForm from "./Components/PostForm";
@@ -8,6 +9,7 @@ const App = () => {
       <Header />
       <BoardHeader />
       <PostForm />
+      <AuthModal />
 
       <div className="px-6 bg-reddit_dark text-reddit_text">
         <div className="border border-reddit_border bg-reddit_dark-brighter p-2 rounded-md">

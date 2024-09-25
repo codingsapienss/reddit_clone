@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const Button = ({ outline, className, ...rest }) => {
   let classNames =
-    "border border-gray-300 rounded-full px-3 py-1 text-sm font-bold h-8";
+    "border border-gray-300 rounded-full px-3 py-1 text-sm font-bold ";
 
   if (outline) {
     classNames += " text-gray-300 ";

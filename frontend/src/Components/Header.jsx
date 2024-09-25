@@ -75,7 +75,7 @@ const Header = () => {
         <FaPlus className="text-white w-5 h-5  mx-2 " />{" "}
       </button> */}
 
-      <div className="mx-2">
+      <div className="mx-2 hidden sm:block">
         <Button outline className="mr-1 ">
           Log In
         </Button>
